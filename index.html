@@ -459,6 +459,40 @@
         }
 
         mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+                // Memuat data artikel dari Pages CMS
+        let cmsArticlesData = {};
+
+        async function loadCMSArticles() {
+            try {
+                const response = await fetch(
+                    'https://raw.githubusercontent.com/saifuddinabulkayyis/saifuddinabulkayyis.github.io/main/content/artikel.json'
+                );
+
+                if (!response.ok) {
+                    throw new Error('Gagal memuat data artikel');
+                }
+
+                const articles = await response.json();
+
+                cmsArticlesData = Object.fromEntries(
+                    articles.map(article => [article.id, {
+                        ...article,
+                        date: new Date(article.date + 'T00:00:00')
+                            .toLocaleDateString('id-ID', {
+                                day: 'numeric',
+                                month: 'long',
+                                year: 'numeric'
+                            })
+                    }])
+                );
+
+                console.log('Data artikel CMS berhasil dimuat.');
+            } catch (error) {
+                console.error('Data artikel CMS gagal dimuat:', error);
+            }
+        }
+
+        loadCMSArticles();
     </script>
 </body>
 </html>
