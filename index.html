@@ -212,24 +212,9 @@
                 <p class="text-sm text-mutedslate">Makalah kuliah, kajian literatur, dan dokumen ilmiah berstandar mandiri.</p>
             </div>
 
-            <div class="space-y-8">
-                <!-- Item Akademik 1 -->
-                <article class="border-b border-softgray pb-8 space-y-3">
-                    <div class="text-xs text-mutedslate">Makalah Kuliah • 28 September 2026</div>
-                    <h2 class="font-editorial text-xl text-darkslate font-medium">
-                        Rekonstruksi Metode Pembelajaran Berbasis Inkuiri dalam Konteks Pendidikan Modern
-                    </h2>
-                    <div class="text-xs bg-ivory border border-softgray p-3 rounded text-mutedslate space-y-1">
-                        <p><strong class="text-darkslate">Abstrak:</strong> Penelitian konseptual ini mengkaji relevansi metode inkuiri dalam merespons kejenuhan model pembelajaran pasif. Hasil telaah menunjukkan peningkatan signifikan pada daya kritis mahasiswa.</p>
-                        <p><strong class="text-darkslate">Kata Kunci:</strong> Pembelajaran Inkuiri, Nalar Kritis, Epistemologi Pendidikan.</p>
-                    </div>
-                    <div class="pt-2 flex items-center space-x-4">
-                        <button onclick="openArticle('akademik-1')" class="text-xs font-medium text-intelgreen hover:underline">Baca Ringkasan Lengkap</button>
-                        <span class="text-softgray">•</span>
-                        <a href="#download" onclick="alert('Simulasi: Berkas PDF makalah ini akan diunduh dari repositori GitHub.'); return false;" class="text-xs font-medium text-darkslate underline hover:text-intelgreen">Unduh Dokumen PDF</a>
-                    </div>
-                </article>
-            </div>
+            <div id="akademik-articles-list" class="space-y-8">
+    <!-- Daftar akademik akan dimuat otomatis dari Pages CMS -->
+</div>
         </section>
 
         <!-- ================= 5. HALAMAN ARSIP PUBLIKASI ================= -->
@@ -470,44 +455,50 @@
 
                 console.log('Data artikel CMS berhasil dimuat.');
                 renderGagasanArticles();
+                renderAkademikArticles();
             } catch (error) {
                 console.error('Data artikel CMS gagal dimuat:', error);
             }
         }
 
-function renderGagasanArticles() {
-    const container = document.getElementById('gagasan-articles-list');
+function renderAkademikArticles() {
+    const container = document.getElementById('akademik-articles-list');
     if (!container) return;
 
     const articles = Object.values(cmsArticlesData)
         .filter(article =>
-            article.category.toLowerCase().includes('esai')
+            article.category.toLowerCase().includes('akademik')
         );
 
     if (articles.length === 0) {
-        container.innerHTML = '<p>Belum ada artikel esai.</p>';
+        container.innerHTML = '<p>Belum ada makalah akademik.</p>';
         return;
     }
 
     container.innerHTML = articles.map(article => `
-        <article class="group cursor-pointer"
-                 onclick="openArticle('${article.id}')">
-            <div class="text-xs text-mutedslate mb-1">
+        <article class="border-b border-softgray pb-8 space-y-3">
+            <div class="text-xs text-mutedslate">
                 ${article.category} • ${article.date}
             </div>
-            <h3 class="font-editorial text-lg text-darkslate
-                       group-hover:text-intelgreen transition-colors
-                       font-medium mb-2">
+
+            <h2 class="font-editorial text-xl text-darkslate font-medium">
                 ${article.title}
-            </h3>
-            <p class="text-sm text-mutedslate leading-relaxed line-clamp-2">
-                ${article.summary || ''}
-            </p>
+            </h2>
+
+            <div class="text-xs bg-ivory border border-softgray p-3 rounded text-mutedslate space-y-1">
+                <p><strong class="text-darkslate">Abstrak:</strong> ${article.abstract || article.summary || ''}</p>
+                <p><strong class="text-darkslate">Kata Kunci:</strong> ${article.keywords || ''}</p>
+            </div>
+
+            <div class="pt-2">
+                <button onclick="openArticle('${article.id}')"
+                    class="text-xs font-medium text-intelgreen hover:underline">
+                    Baca Ringkasan Lengkap
+                </button>
+            </div>
         </article>
     `).join('');
-}
-
-        loadCMSArticles();
+}        loadCMSArticles();
     </script>
 </body>
 </html>
