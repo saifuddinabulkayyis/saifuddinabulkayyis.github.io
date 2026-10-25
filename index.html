@@ -1,108 +1,464 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Website akademik Saefudin Abul Qais, berisi artikel, makalah, dan catatan keilmuan.">
-  <title>Saefudin Abul Qais | Ruang Akademik</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      color: #24352e;
-      background: #f8f7f2;
-      line-height: 1.8;
-    }
-    header {
-      padding: 24px 8%;
-      border-bottom: 1px solid #deded5;
-      background: #fff;
-    }
-    .brand { font-size: 20px; font-weight: bold; }
-    nav { margin-top: 10px; font-family: Arial, sans-serif; }
-    nav a {
-      margin-right: 20px;
-      color: #42634f;
-      text-decoration: none;
-      font-size: 14px;
-    }
-    main { max-width: 850px; margin: auto; padding: 55px 24px; }
-    .eyebrow {
-      color: #66816d;
-      font: 12px Arial, sans-serif;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-    h1 { font-size: clamp(34px, 6vw, 52px); line-height: 1.2; }
-    h2 { margin-top: 42px; font-size: 25px; }
-    .intro { max-width: 650px; font-size: 18px; color: #59655d; }
-    .article {
-      padding: 20px 0;
-      border-bottom: 1px solid #deded5;
-    }
-    .article h3 { margin-bottom: 5px; }
-    .article p { margin-top: 5px; color: #59655d; }
-    footer {
-      padding: 24px;
-      text-align: center;
-      border-top: 1px solid #deded5;
-      font: 13px Arial, sans-serif;
-      color: #68746b;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saefudin Abul Qais — Ruang Gagasan, Pendidikan, dan Keilmuan</title>
+    <meta name="description" content="Ruang untuk merawat gagasan, mendokumentasikan pembelajaran, dan membagikan pengetahuan seputar pendidikan, literasi, dan refleksi keilmuan oleh Saefudin Abul Qais.">
+    
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:title" content="Saefudin Abul Qais — Ruang Gagasan, Pendidikan, dan Keilmuan">
+    <meta property="og:description" content="Ruang digital untuk esai, makalah akademik, dan catatan reflektif keilmuan.">
+    <meta property="og:type" content="website">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ivory: '#F9F8F6',
+                        darkslate: '#1A1A1A',
+                        intelgreen: '#1B3B2B',
+                        softgray: '#E5E5E0',
+                        mutedslate: '#555555'
+                    },
+                    fontFamily: {
+                        serif: ['Lora', 'Merriweather', 'Georgia', 'serif'],
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            background-color: #F9F8F6;
+            color: #1A1A1A;
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3, h4, .font-editorial {
+            font-family: 'Lora', serif;
+        }
+        /* Smooth transitions for tab views */
+        .view-section {
+            display: none;
+        }
+        .view-section.active {
+            display: block;
+        }
+    </style>
 </head>
-<body>
-  <header>
-    <div class="brand">Saefudin Abul Qais</div>
-    <nav>
-      <a href="#beranda">Beranda</a>
-      <a href="#tentang">Tentang</a>
-      <a href="#publikasi">Publikasi</a>
-    </nav>
-  </header>
+<body class="min-h-screen flex flex-col selection:bg-intelgreen selection:text-white">
 
-  <main>
-    <section id="beranda">
-      <div class="eyebrow">Ruang Akademik Pribadi</div>
-      <h1>Gagasan, Pengetahuan, dan Pembelajaran.</h1>
-      <p class="intro">
-        Selamat datang di ruang akademik Saefudin Abul Qais.
-        Website ini menjadi tempat dokumentasi makalah, artikel,
-        pemikiran, dan catatan pembelajaran.
-      </p>
-    </section>
+    <!-- HEADER / NAVIGASI KONSISTEN -->
+    <header class="w-full border-b border-softgray bg-ivory/90 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-3xl mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- Wordmark -->
+            <a href="#beranda" onclick="switchView('beranda')" class="group text-left">
+                <span class="block font-editorial font-semibold text-lg sm:text-xl text-darkslate group-hover:text-intelgreen transition-colors">
+                    Saefudin Abul Qais
+                </span>
+                <span class="block text-xs text-mutedslate tracking-wider uppercase">
+                    Ruang Gagasan & Keilmuan
+                </span>
+            </a>
 
-    <section id="tentang">
-      <h2>Tentang</h2>
-      <p>
-        Ruang ini dikembangkan sebagai arsip digital pribadi
-        untuk menyimpan dan membagikan karya tulis serta
-        hasil kajian yang dapat diakses oleh masyarakat luas.
-      </p>
-    </section>
+            <!-- Navigasi Desktop & Mobile Toggle -->
+            <nav class="hidden md:flex items-center space-x-6 text-sm font-medium text-mutedslate">
+                <button onclick="switchView('beranda')" class="nav-link hover:text-darkslate transition-colors text-darkslate font-semibold" data-target="beranda">Beranda</button>
+                <button onclick="switchView('profil')" class="nav-link hover:text-darkslate transition-colors" data-target="profil">Profil</button>
+                <button onclick="switchView('gagasan')" class="nav-link hover:text-darkslate transition-colors" data-target="gagasan">Gagasan & Esai</button>
+                <button onclick="switchView('akademik')" class="nav-link hover:text-darkslate transition-colors" data-target="akademik">Akademik</button>
+                <button onclick="switchView('arsip')" class="nav-link hover:text-darkslate transition-colors" data-target="arsip">Arsip</button>
+                <button onclick="switchView('kontak')" class="nav-link hover:text-darkslate transition-colors" data-target="kontak">Kontak</button>
+            </nav>
 
-    <section id="publikasi">
-      <h2>Artikel dan Makalah</h2>
-      <p>Publikasi akan ditambahkan secara bertahap.</p>
-      <div class="article">
-        <h3>Makalah Pertama</h3>
-        <p>
-          Halaman publikasi ini masih berupa contoh.
-          Nantinya, bagian ini dapat diisi dengan judul,
-          abstrak, tanggal publikasi, dan tautan PDF.
-        </p>
-      </div>
-    </section>
-  </main>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-darkslate p-2 focus:outline-none" aria-label="Menu Utama">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
 
-  <footer>
-    © <span id="year"></span> Saefudin Abul Qais · Ruang Akademik
-  </footer>
-  <script>
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
-  </script>
+        <!-- Mobile Nav Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden border-b border-softgray bg-ivory px-6 py-4 space-y-3">
+            <button onclick="switchView('beranda'); toggleMobileMenu();" class="block w-full text-left py-1 text-darkslate font-semibold">Beranda</button>
+            <button onclick="switchView('profil'); toggleMobileMenu();" class="block w-full text-left py-1 text-mutedslate hover:text-darkslate">Profil</button>
+            <button onclick="switchView('gagasan'); toggleMobileMenu();" class="block w-full text-left py-1 text-mutedslate hover:text-darkslate">Gagasan & Esai</button>
+            <button onclick="switchView('akademik'); toggleMobileMenu();" class="block w-full text-left py-1 text-mutedslate hover:text-darkslate">Akademik & Kajian</button>
+            <button onclick="switchView('arsip'); toggleMobileMenu();" class="block w-full text-left py-1 text-mutedslate hover:text-darkslate">Arsip Publikasi</button>
+            <button onclick="switchView('kontak'); toggleMobileMenu();" class="block w-full text-left py-1 text-mutedslate hover:text-darkslate">Kontak</button>
+        </div>
+    </header>
+
+    <!-- KONTEN UTAMA DENGAN LEBAR KOLOM OPTIMUM (680px - 720px) -->
+    <main class="flex-grow max-w-2xl w-full mx-auto px-6 py-12 sm:py-16">
+
+        <!-- ================= 1. HALAMAN BERANDA (index) ================= -->
+        <section id="view-beranda" class="view-section active space-y-12">
+            <!-- Hero Pengantar -->
+            <div class="space-y-4">
+                <h1 class="font-editorial text-3xl sm:text-4xl text-darkslate tracking-tight leading-snug">
+                    Merawat gagasan, mendokumentasikan pembelajaran, dan membagikan pengetahuan.
+                </h1>
+                <p class="text-base sm:text-lg text-mutedslate leading-relaxed font-normal">
+                    Selamat datang di ruang digital milik <strong class="text-darkslate font-medium">Saefudin Abul Qais</strong>. Tempat ini didedikasikan untuk mencatat refleksi intelektual, kajian pendidikan, serta makalah dan esai analitis yang dikembangkan secara mandiri.
+                </p>
+                <div class="pt-2 flex items-center space-x-4">
+                    <button onclick="switchView('gagasan')" class="inline-flex items-center text-sm font-medium text-intelgreen hover:underline">
+                        Jelajahi Esai Terbaru &rarr;
+                    </button>
+                    <span class="text-softgray">•</span>
+                    <button onclick="switchView('profil')" class="text-sm font-medium text-mutedslate hover:text-darkslate">
+                        Tentang Penulis
+                    </button>
+                </div>
+            </div>
+
+            <hr class="border-softgray">
+
+            <!-- Sorotan Tulisan Terbaru -->
+            <div class="space-y-6">
+                <div class="flex items-center justify-between">
+                    <h2 class="font-editorial text-xl text-darkslate font-medium">Sorotan Publikasi</h2>
+                    <button onclick="switchView('arsip')" class="text-xs tracking-wider uppercase text-mutedslate hover:text-darkslate font-medium">Lihat Semua Arsip</button>
+                </div>
+
+                <div class="space-y-8">
+                    <!-- Kartu Artikel 1 -->
+                    <article class="group cursor-pointer" onclick="openArticle('esai-1')">
+                        <div class="text-xs text-mutedslate mb-1">Esai Reflektif • 12 Oktober 2026</div>
+                        <h3 class="font-editorial text-lg text-darkslate group-hover:text-intelgreen transition-colors font-medium mb-2">
+                            Arti Belajar di Tengah Derasnya Arus Informasi Digital
+                        </h3>
+                        <p class="text-sm text-mutedslate leading-relaxed line-clamp-2">
+                            Refleksi mengenai bagaimana manusia modern menyaring pengetahuan, menjaga kedalaman berpikir, dan tidak terjebak dalam akumulasi informasi yang superfisial.
+                        </p>
+                    </article>
+
+                    <!-- Kartu Artikel 2 -->
+                    <article class="group cursor-pointer" onclick="openArticle('akademik-1')">
+                        <div class="text-xs text-mutedslate mb-1">Kajian Akademik • 28 September 2026</div>
+                        <h3 class="font-editorial text-lg text-darkslate group-hover:text-intelgreen transition-colors font-medium mb-2">
+                            Rekonstruksi Metode Pembelajaran Berbasis Inkuiri dalam Konteks Pendidikan Modern
+                        </h3>
+                        <p class="text-sm text-mutedslate leading-relaxed line-clamp-2">
+                            Makalah analitis yang meneliti efektivitas pendekatan inkuiri mandiri untuk menumbuhkan nalar kritis peserta didik di era kontemporer.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 2. HALAMAN PROFIL ================= -->
+        <section id="view-profil" class="view-section space-y-8">
+            <div class="space-y-3">
+                <h1 class="font-editorial text-3xl text-darkslate">Profil & Prinsip Intelektual</h1>
+                <p class="text-sm text-mutedslate">Catatan ringkas mengenai latar minat, fokus kajian, dan arah pemikiran.</p>
+            </div>
+
+            <div class="space-y-6 text-mutedslate leading-relaxed text-sm sm:text-base">
+                <p>
+                    Nama saya <strong class="text-darkslate">Saefudin Abul Qais</strong>. Website ini saya bangun sebagai rumah digital mandiri untuk merawat tradisi literasi, mendokumentasikan proses belajar, serta membagikan buah pikiran dalam bentuk esai dan kajian akademik.
+                </p>
+
+                <div class="space-y-3 pt-2">
+                    <h3 class="font-editorial text-lg text-darkslate font-medium">Fokus Kajian & Minat</h3>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li>Filsafat pendidikan, epistemologi, dan metodologi pembelajaran.</li>
+                        <li>Dinamika literasi, budaya membaca, dan transmisi ilmu di ruang publik.</li>
+                        <li>Refleksi kritis atas perkembangan teknologi terhadap pola pikir manusia.</li>
+                    </ul>
+                </div>
+
+                <div class="space-y-3 pt-2">
+                    <h3 class="font-editorial text-lg text-darkslate font-medium">Prinsip Menulis</h3>
+                    <p>
+                        Saya percaya bahwa gagasan yang baik lahir dari proses pembacaan yang tekun, perenungan yang jujur, serta penyusunan argumen yang jernih. Tulisan di ruang ini disajikan dengan memegang teguh kejujuran akademik dan kesederhanaan bahasa.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 3. HALAMAN GAGASAN & ESAI ================= -->
+        <section id="view-gagasan" class="view-section space-y-8">
+            <div class="space-y-3">
+                <h1 class="font-editorial text-3xl text-darkslate">Gagasan & Esai</h1>
+                <p class="text-sm text-mutedslate">Kumpulan tulisan reflektif, analitis, dan opini konseptual.</p>
+            </div>
+
+            <div class="space-y-8">
+                <!-- Item Esai 1 -->
+                <article class="border-b border-softgray pb-6 group cursor-pointer" onclick="openArticle('esai-1')">
+                    <div class="text-xs text-mutedslate mb-1">Esai Reflektif • 12 Oktober 2026</div>
+                    <h2 class="font-editorial text-xl text-darkslate group-hover:text-intelgreen transition-colors font-medium mb-2">
+                        Arti Belajar di Tengah Derasnya Arus Informasi Digital
+                    </h2>
+                    <p class="text-sm text-mutedslate leading-relaxed mb-3">
+                        Refleksi mengenai bagaimana manusia modern menyaring pengetahuan, menjaga kedalaman berpikir, dan tidak terjebak dalam akumulasi informasi yang superfisial.
+                    </p>
+                    <span class="text-xs font-medium text-intelgreen inline-flex items-center">Baca selengkapnya &rarr;</span>
+                </article>
+
+                <!-- Item Esai 2 -->
+                <article class="border-b border-softgray pb-6 group cursor-pointer" onclick="openArticle('esai-2')">
+                    <div class="text-xs text-mutedslate mb-1">Opini Konseptual • 04 Agustus 2026</div>
+                    <h2 class="font-editorial text-xl text-darkslate group-hover:text-intelgreen transition-colors font-medium mb-2">
+                        Menulis Sebagai Upaya Merawat Kewarasan Intelektual
+                    </h2>
+                    <p class="text-sm text-mutedslate leading-relaxed mb-3">
+                        Mengapa aktivitas merangkum pikiran ke dalam tulisan bukan sekadar alat komunikasi, melainkan sarana utama menguji kejernihan logika seseorang.
+                    </p>
+                    <span class="text-xs font-medium text-intelgreen inline-flex items-center">Baca selengkapnya &rarr;</span>
+                </article>
+            </div>
+        </section>
+
+        <!-- ================= 4. HALAMAN AKADEMIK & KAJIAN ================= -->
+        <section id="view-akademik" class="view-section space-y-8">
+            <div class="space-y-3">
+                <h1 class="font-editorial text-3xl text-darkslate">Akademik & Kajian</h1>
+                <p class="text-sm text-mutedslate">Makalah kuliah, kajian literatur, dan dokumen ilmiah berstandar mandiri.</p>
+            </div>
+
+            <div class="space-y-8">
+                <!-- Item Akademik 1 -->
+                <article class="border-b border-softgray pb-8 space-y-3">
+                    <div class="text-xs text-mutedslate">Makalah Kuliah • 28 September 2026</div>
+                    <h2 class="font-editorial text-xl text-darkslate font-medium">
+                        Rekonstruksi Metode Pembelajaran Berbasis Inkuiri dalam Konteks Pendidikan Modern
+                    </h2>
+                    <div class="text-xs bg-ivory border border-softgray p-3 rounded text-mutedslate space-y-1">
+                        <p><strong class="text-darkslate">Abstrak:</strong> Penelitian konseptual ini mengkaji relevansi metode inkuiri dalam merespons kejenuhan model pembelajaran pasif. Hasil telaah menunjukkan peningkatan signifikan pada daya kritis mahasiswa.</p>
+                        <p><strong class="text-darkslate">Kata Kunci:</strong> Pembelajaran Inkuiri, Nalar Kritis, Epistemologi Pendidikan.</p>
+                    </div>
+                    <div class="pt-2 flex items-center space-x-4">
+                        <button onclick="openArticle('akademik-1')" class="text-xs font-medium text-intelgreen hover:underline">Baca Ringkasan Lengkap</button>
+                        <span class="text-softgray">•</span>
+                        <a href="#download" onclick="alert('Simulasi: Berkas PDF makalah ini akan diunduh dari repositori GitHub.'); return false;" class="text-xs font-medium text-darkslate underline hover:text-intelgreen">Unduh Dokumen PDF</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- ================= 5. HALAMAN ARSIP PUBLIKASI ================= -->
+        <section id="view-arsip" class="view-section space-y-8">
+            <div class="space-y-3">
+                <h1 class="font-editorial text-3xl text-darkslate">Arsip Publikasi</h1>
+                <p class="text-sm text-mutedslate">Katalog lengkap seluruh esai, catatan, dan makalah yang pernah diterbitkan.</p>
+            </div>
+
+            <div class="space-y-4">
+                <div class="text-xs text-mutedslate uppercase tracking-wider font-medium pt-2">2026</div>
+                <ul class="space-y-4">
+                    <li class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-softgray pb-3 cursor-pointer group" onclick="openArticle('esai-1')">
+                        <div>
+                            <h3 class="font-editorial text-darkslate group-hover:text-intelgreen transition-colors">Arti Belajar di Tengah Derasnya Arus Informasi Digital</h3>
+                            <span class="text-xs text-mutedslate">Esai Reflektif • 12 Oktober 2026</span>
+                        </div>
+                        <span class="text-xs text-intelgreen mt-1 sm:mt-0 font-medium">Baca &rarr;</span>
+                    </li>
+                    <li class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-softgray pb-3 cursor-pointer group" onclick="openArticle('akademik-1')">
+                        <div>
+                            <h3 class="font-editorial text-darkslate group-hover:text-intelgreen transition-colors">Rekonstruksi Metode Pembelajaran Berbasis Inkuiri</h3>
+                            <span class="text-xs text-mutedslate">Makalah Akademik • 28 September 2026</span>
+                        </div>
+                        <span class="text-xs text-intelgreen mt-1 sm:mt-0 font-medium">Baca &rarr;</span>
+                    </li>
+                    <li class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-softgray pb-3 cursor-pointer group" onclick="openArticle('esai-2')">
+                        <div>
+                            <h3 class="font-editorial text-darkslate group-hover:text-intelgreen transition-colors">Menulis Sebagai Upaya Merawat Kewarasan Intelektual</h3>
+                            <span class="text-xs text-mutedslate">Opini Konseptual • 04 Agustus 2026</span>
+                        </div>
+                        <span class="text-xs text-intelgreen mt-1 sm:mt-0 font-medium">Baca &rarr;</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ================= 6. HALAMAN KONTAK ================= -->
+        <section id="view-kontak" class="view-section space-y-8">
+            <div class="space-y-3">
+                <h1 class="font-editorial text-3xl text-darkslate">Kontak & Dialog</h1>
+                <p class="text-sm text-mutedslate">Ruang penghubung untuk korespondensi profesional dan pertukaran gagasan.</p>
+            </div>
+
+            <div class="space-y-6 text-mutedslate text-sm sm:text-base leading-relaxed">
+                <p>
+                    Saya terbuka untuk diskusi akademik, korespondensi seputar esai yang diterbitkan, maupun kolaborasi dalam ranah pendidikan dan literasi.
+                </p>
+                <div class="p-6 bg-ivory border border-softgray rounded space-y-2">
+                    <p class="text-xs tracking-wider uppercase text-mutedslate font-medium">Alamat Surat Elektronik Resmi</p>
+                    <p class="text-darkslate font-medium select-all">saefudin.abulqais@example.com <span class="text-xs font-normal text-mutedslate">(Ganti dengan email aktif Anda)</span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 7. HALAMAN DETAIL ARTIKEL (Dinamis via JS) ================= -->
+        <section id="view-article-detail" class="view-section space-y-8">
+            <button onclick="goBackFromArticle()" class="text-xs font-medium text-mutedslate hover:text-darkslate inline-flex items-center space-x-1">
+                <span>&larr; Kembali ke Arsip / Daftar Tulisan</span>
+            </button>
+
+            <article id="article-content-container" class="space-y-6">
+                <!-- Konten artikel akan dimuat melalui JavaScript -->
+            </article>
+        </section>
+
+    </main>
+
+    <!-- FOOTER KONSISTEN -->
+    <footer class="w-full border-t border-softgray bg-ivory py-8 mt-auto">
+        <div class="max-w-3xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between text-xs text-mutedslate space-y-4 sm:space-y-0">
+            <div>
+                <p class="font-editorial text-darkslate font-medium text-sm">Saefudin Abul Qais</p>
+                <p>&copy; <span id="current-year">2026</span> Ruang Gagasan, Pendidikan, dan Keilmuan. Hak cipta dilindungi.</p>
+            </div>
+            <div class="flex space-x-6">
+                <button onclick="switchView('beranda')" class="hover:text-darkslate transition-colors">Beranda</button>
+                <button onclick="switchView('profil')" class="hover:text-darkslate transition-colors">Profil</button>
+                <button onclick="switchView('arsip')" class="hover:text-darkslate transition-colors">Arsip</button>
+                <button onclick="switchView('kontak')" class="hover:text-darkslate transition-colors">Kontak</button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC UNTUK SINGLE PAGE TAB & ARTICLE VIEWER -->
+    <script>
+        // Update tahun otomatis di footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Database artikel sederhana untuk demo halaman baca
+        const articlesData = {
+            'esai-1': {
+                title: 'Arti Belajar di Tengah Derasnya Arus Informasi Digital',
+                category: 'Esai Reflektif',
+                date: '12 Oktober 2026',
+                author: 'Saefudin Abul Qais',
+                readTime: '4 menit baca',
+                content: `
+                    <p class="text-mutedslate leading-relaxed">
+                        Arus informasi di era digital tidak lagi mengalir dalam bentuk tetesan, melainkan gelombang besar yang menghantam kesadaran kita setiap detik. Dalam situasi seperti ini, manusia sering kali keliru memahami akumulasi data sebagai penambahan pengetahuan. Padahal, mengetahui banyak hal tanpa perenungan mendalam hanya melahirkan kebingungan baru.
+                    </p>
+                    <h3 class="font-editorial text-xl text-darkslate font-medium pt-4">Menjaga Kedalaman Berpikir</h3>
+                    <p class="text-mutedslate leading-relaxed">
+                        Proses belajar yang sejati menuntut jeda. Ia memerlukan ruang sunyi tempat pikiran dapat mengendap, diuji, dan dihubungkan satu sama lain. Ketika kecepatan menjadi ukuran utama keberhasilan, kemampuan untuk merenung sering kali dikorbankan demi respons yang cepat namun dangkal.
+                    </p>
+                    <h3 class="font-editorial text-xl text-darkslate font-medium pt-4">Kesimpulan</h3>
+                    <p class="text-mutedslate leading-relaxed">
+                        Merawat tradisi membaca dan menulis di tengah kebisingan digital adalah bentuk perlawanan kultural. Melalui tulisan, kita belajar memilah mana yang esensial dan mana yang sekadar gangguan sesaat.
+                    </p>
+                `
+            },
+            'esai-2': {
+                title: 'Menulis Sebagai Upaya Merawat Kewarasan Intelektual',
+                category: 'Opini Konseptual',
+                date: '04 Agustus 2026',
+                author: 'Saefudin Abul Qais',
+                readTime: '3 menit baca',
+                content: `
+                    <p class="text-mutedslate leading-relaxed">
+                        Pikiran manusia bersifat cair dan mudah menguap. Tanpa wadah yang tegas, gagasan-gagasan terbaik sering kali hilang begitu saja ditelan rutinitas harian. Di sinilah fungsi utama menulis: bukan sekadar menyampaikan pesan kepada orang lain, melainkan merapikan kekacauan di dalam kepala sendiri.
+                    </p>
+                    <h3 class="font-editorial text-xl text-darkslate font-medium pt-4">Kejujuran dalam Merangkai Kalimat</h3>
+                    <p class="text-mutedslate leading-relaxed">
+                        Menulis memaksa seseorang untuk jujur pada batas pemahamannya sendiri. Saat sebuah ide dituliskan, cacat logika yang tadinya tersembunyi di balik angan-angan abstrak akan terlihat dengan jelas.
+                    </p>
+                `
+            },
+            'akademik-1': {
+                title: 'Rekonstruksi Metode Pembelajaran Berbasis Inkuiri dalam Konteks Pendidikan Modern',
+                category: 'Makalah Akademik',
+                date: '28 September 2026',
+                author: 'Saefudin Abul Qais',
+                readTime: '6 menit baca',
+                content: `
+                    <div class="p-4 bg-ivory border border-softgray rounded text-sm text-mutedslate space-y-2 mb-6">
+                        <p><strong class="text-darkslate">Abstrak:</strong> Penelitian konseptual ini mengkaji relevansi metode inkuiri dalam merespons kejenuhan model pembelajaran pasif. Hasil telaah menunjukkan peningkatan signifikan pada daya kritis peserta didik.</p>
+                        <p><strong class="text-darkslate">Kata Kunci:</strong> Pembelajaran Inkuiri, Nalar Kritis, Epistemologi Pendidikan.</p>
+                    </div>
+                    <p class="text-mutedslate leading-relaxed">
+                        Pendidikan modern sering kali terjebak dalam orientasi administratif yang mengutamakan hafalan ketimbang pembentukan nalar. Makalah ini menelaah kembali prinsip dasar metode inkuiri sebagai alternatif pemulihan esensi pendidikan yang memerdekakan akal budi.
+                    </p>
+                    <h3 class="font-editorial text-xl text-darkslate font-medium pt-4">Daftar Pustaka</h3>
+                    <ul class="list-disc pl-5 text-sm text-mutedslate space-y-1">
+                        <li>Dewey, John. (1933). <em>How We Think</em>. Boston: D.C. Heath & Co.</li>
+                        <li>Freire, Paulo. (1970). <em>Pedagogy of the Oppressed</em>. New York: Seabury Press.</li>
+                    </ul>
+                `
+            }
+        };
+
+        // Fungsi Navigasi Antar Halaman
+        function switchView(viewId) {
+            // Sembunyikan semua section
+            document.querySelectorAll('.view-section').forEach(el => {
+                el.classList.remove('active');
+            });
+            // Tampilkan section tujuan
+            const target = document.getElementById('view-' + viewId);
+            if (target) {
+                target.classList.add('active');
+            }
+            // Scroll ke atas
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            // Update status aktif di nav
+            document.querySelectorAll('.nav-link').forEach(btn => {
+                if(btn.getAttribute('data-target') === viewId) {
+                    btn.classList.add('text-darkslate', 'font-semibold');
+                    btn.classList.remove('text-mutedslate');
+                } else {
+                    btn.classList.remove('text-darkslate', 'font-semibold');
+                    btn.classList.add('text-mutedslate');
+                }
+            });
+        }
+
+        // Fungsi Membuka Artikel Detail
+        function openArticle(articleId) {
+            const article = articlesData[articleId];
+            if (!article) return;
+
+            const container = document.getElementById('article-content-container');
+            container.innerHTML = `
+                <div class="space-y-3">
+                    <div class="text-xs text-mutedslate">${article.category} • ${article.date} • Oleh ${article.author} (${article.readTime})</div>
+                    <h1 class="font-editorial text-2xl sm:text-3xl text-darkslate leading-snug">${article.title}</h1>
+                </div>
+                <hr class="border-softgray">
+                <div class="space-y-4 text-base">
+                    ${article.content}
+                </div>
+            `;
+
+            document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
+            document.getElementById('view-article-detail').classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function goBackFromArticle() {
+            switchView('arsip');
+        }
+
+        // Toggle Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+    </script>
 </body>
 </html>
