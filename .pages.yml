@@ -1,0 +1,56 @@
+
+media: media
+
+content:
+  - name: articles
+    label: Artikel
+    type: file
+    path: content/artikel.json
+    format: json
+    list: true
+    fields:
+      - name: id
+        label: ID Artikel
+        type: string
+        required: true
+
+      - name: title
+        label: Judul
+        type: string
+        required: true
+
+      - name: category
+        label: Kategori
+        type: string
+        required: true
+
+      - name: date
+        label: Tanggal Terbit
+        type: date
+        required: true
+
+      - name: author
+        label: Penulis
+        type: string
+
+      - name: readTime
+        label: Waktu Baca
+        type: string
+
+      - name: summary
+        label: Ringkasan
+        type: text
+
+      - name: abstract
+        label: Abstrak
+        type: text
+
+      - name: keywords
+        label: Kata Kunci
+        type: string
+
+      - name: content
+        label: Isi Artikel (HTML)
+        type: code
+        options:
+          language: html
