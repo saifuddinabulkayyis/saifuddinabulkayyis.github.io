@@ -426,7 +426,7 @@
 
         // Fungsi Membuka Artikel Detail
         function openArticle(articleId) {
-            const article = articlesData[articleId];
+            const article = cmsArticlesData[articleId] || articlesData[articleId];
             if (!article) return;
 
             const container = document.getElementById('article-content-container');
