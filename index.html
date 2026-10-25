@@ -224,32 +224,10 @@
                 <p class="text-sm text-mutedslate">Katalog lengkap seluruh esai, catatan, dan makalah yang pernah diterbitkan.</p>
             </div>
 
-            <div class="space-y-4">
-                <div class="text-xs text-mutedslate uppercase tracking-wider font-medium pt-2">2026</div>
-                <ul class="space-y-4">
-                    <li class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-softgray pb-3 cursor-pointer group" onclick="openArticle('esai-1')">
-                        <div>
-                            <h3 class="font-editorial text-darkslate group-hover:text-intelgreen transition-colors">Arti Belajar di Tengah Derasnya Arus Informasi Digital</h3>
-                            <span class="text-xs text-mutedslate">Esai Reflektif • 12 Oktober 2026</span>
-                        </div>
-                        <span class="text-xs text-intelgreen mt-1 sm:mt-0 font-medium">Baca &rarr;</span>
-                    </li>
-                    <li class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-softgray pb-3 cursor-pointer group" onclick="openArticle('akademik-1')">
-                        <div>
-                            <h3 class="font-editorial text-darkslate group-hover:text-intelgreen transition-colors">Rekonstruksi Metode Pembelajaran Berbasis Inkuiri</h3>
-                            <span class="text-xs text-mutedslate">Makalah Akademik • 28 September 2026</span>
-                        </div>
-                        <span class="text-xs text-intelgreen mt-1 sm:mt-0 font-medium">Baca &rarr;</span>
-                    </li>
-                    <li class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-softgray pb-3 cursor-pointer group" onclick="openArticle('esai-2')">
-                        <div>
-                            <h3 class="font-editorial text-darkslate group-hover:text-intelgreen transition-colors">Menulis Sebagai Upaya Merawat Kewarasan Intelektual</h3>
-                            <span class="text-xs text-mutedslate">Opini Konseptual • 04 Agustus 2026</span>
-                        </div>
-                        <span class="text-xs text-intelgreen mt-1 sm:mt-0 font-medium">Baca &rarr;</span>
-                    </li>
-                </ul>
-            </div>
+            
+<div id="arsip-articles-list" class="space-y-4">
+    <!-- Arsip publikasi akan dimuat otomatis dari Pages CMS -->
+</div>
         </section>
 
         <!-- ================= 6. HALAMAN KONTAK ================= -->
@@ -456,6 +434,7 @@
                 console.log('Data artikel CMS berhasil dimuat.');
                 renderGagasanArticles();
                 renderAkademikArticles();
+                renderArsipArticles();
             } catch (error) {
                 console.error('Data artikel CMS gagal dimuat:', error);
             }
@@ -498,7 +477,59 @@ function renderAkademikArticles() {
             </div>
         </article>
     `).join('');
-}        loadCMSArticles();
+}
+        
+function renderArsipArticles() {
+    const container = document.getElementById('arsip-articles-list');
+    if (!container) return;
+
+    const articles = Object.values(cmsArticlesData)
+        .sort((a, b) => b.date.localeCompare(a.date));
+
+    if (articles.length === 0) {
+        container.innerHTML = '<p>Belum ada publikasi.</p>';
+        return;
+    }
+
+    const groupedArticles = {};
+
+    articles.forEach(article => {
+        const yearMatch = article.date.match(/\d{4}$/);
+        const year = yearMatch ? yearMatch[0] : 'Lainnya';
+
+        if (!groupedArticles[year]) {
+            groupedArticles[year] = [];
+        }
+
+        groupedArticles[year].push(article);
+    });
+
+    container.innerHTML = Object.keys(groupedArticles)
+        .sort((a, b) => b.localeCompare(a))
+        .map(year => `
+            <div class="space-y-4">
+                <div class="text-xs text-mutedslate uppercase tracking-wider font-medium pt-2">
+                    ${year}
+                </div>
+                <ul class="space-y-4">
+                    ${groupedArticles[year].map(article => `
+                        <li class="border-b border-softgray pb-4">
+                            <button
+                                onclick="openArticle('${article.id}')"
+                                class="text-left font-editorial text-lg text-darkslate hover:text-intelgreen transition-colors">
+                                ${article.title}
+                            </button>
+                            <p class="text-xs text-mutedslate mt-1">
+                                ${article.category} • ${article.date}
+                            </p>
+                        </li>
+                    `).join('')}
+                </ul>
+            </div>
+        `).join('');
+}
+
+        loadCMSArticles();
     </script>
 </body>
 </html>
