@@ -178,31 +178,11 @@
                 <p class="text-sm text-mutedslate">Kumpulan tulisan reflektif, analitis, dan opini konseptual.</p>
             </div>
 
-            <div class="space-y-8">
-                <!-- Item Esai 1 -->
-                <article class="border-b border-softgray pb-6 group cursor-pointer" onclick="openArticle('esai-1')">
-                    <div class="text-xs text-mutedslate mb-1">Esai Reflektif • 12 Oktober 2026</div>
-                    <h2 class="font-editorial text-xl text-darkslate group-hover:text-intelgreen transition-colors font-medium mb-2">
-                        Arti Belajar di Tengah Derasnya Arus Informasi Digital
-                    </h2>
-                    <p class="text-sm text-mutedslate leading-relaxed mb-3">
-                        Refleksi mengenai bagaimana manusia modern menyaring pengetahuan, menjaga kedalaman berpikir, dan tidak terjebak dalam akumulasi informasi yang superfisial.
-                    </p>
-                    <span class="text-xs font-medium text-intelgreen inline-flex items-center">Baca selengkapnya &rarr;</span>
-                </article>
+            
+<div id="gagasan-page-articles-list" class="space-y-8">
+    <!-- Daftar artikel Gagasan & Esai dimuat dari Pages CMS -->
+</div>
 
-                <!-- Item Esai 2 -->
-                <article class="border-b border-softgray pb-6 group cursor-pointer" onclick="openArticle('esai-2')">
-                    <div class="text-xs text-mutedslate mb-1">Opini Konseptual • 04 Agustus 2026</div>
-                    <h2 class="font-editorial text-xl text-darkslate group-hover:text-intelgreen transition-colors font-medium mb-2">
-                        Menulis Sebagai Upaya Merawat Kewarasan Intelektual
-                    </h2>
-                    <p class="text-sm text-mutedslate leading-relaxed mb-3">
-                        Mengapa aktivitas merangkum pikiran ke dalam tulisan bukan sekadar alat komunikasi, melainkan sarana utama menguji kejernihan logika seseorang.
-                    </p>
-                    <span class="text-xs font-medium text-intelgreen inline-flex items-center">Baca selengkapnya &rarr;</span>
-                </article>
-            </div>
         </section>
 
         <!-- ================= 4. HALAMAN AKADEMIK & KAJIAN ================= -->
@@ -440,7 +420,59 @@
             }
         }
 
-function renderAkademikArticles() {
+
+function renderGagasanArticles() {
+    const allArticles = Object.values(cmsArticlesData);
+
+    const articles = allArticles
+        .filter(article =>
+            !article.category.toLowerCase().includes('akademik')
+        )
+        .sort((a, b) => {
+            const dateA = new Date(a.date);
+            const dateB = new Date(b.date);
+            return dateB - dateA;
+        });
+
+    const renderList = (container, items) => {
+        if (!container) return;
+
+        if (items.length === 0) {
+            container.innerHTML = '<p>Belum ada artikel esai.</p>';
+            return;
+        }
+
+        container.innerHTML = items.map(article => `
+            <article class="border-b border-softgray pb-6 group cursor-pointer"
+                     onclick="openArticle('${article.id}')">
+                <div class="text-xs text-mutedslate mb-1">
+                    ${article.category} • ${article.date}
+                </div>
+                <h2 class="font-editorial text-xl text-darkslate group-hover:text-intelgreen transition-colors font-medium mb-2">
+                    ${article.title}
+                </h2>
+                <p class="text-sm text-mutedslate leading-relaxed mb-3">
+                    ${article.summary || ''}
+                </p>
+                <span class="text-xs font-medium text-intelgreen">
+                    Baca selengkapnya →
+                </span>
+            </article>
+        `).join('');
+    };
+
+    renderList(
+        document.getElementById('gagasan-articles-list'),
+        articles.slice(0, 2)
+    );
+
+    renderList(
+        document.getElementById('gagasan-page-articles-list'),
+        articles
+    );
+}
+
+        function renderAkademikArticles() {
     const container = document.getElementById('akademik-articles-list');
     if (!container) return;
 
