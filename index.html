@@ -1,14 +1,15 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saefudin Abul Qais — Ruang Gagasan, Pendidikan, dan Keilmuan</title>
-    <meta name="description" content="Ruang untuk merawat gagasan, mendokumentasikan pembelajaran, dan membagikan pengetahuan seputar pendidikan, literasi, dan refleksi keilmuan oleh Saefudin Abul Qais.">
-    
+    <title>Saifuddin Abul Kayyis — Merawat Gagasan, Menelusuri Pengetahuan</title>
+    <meta name="description" content="Ruang personal Saifuddin Abul Kayyis untuk mendokumentasikan perjalanan intelektual, merawat gagasan, dan mengembangkan pemikiran tentang pendidikan, fitrah, dan kehidupan.">
+
     <!-- Open Graph / Social Sharing -->
-    <meta property="og:title" content="Saefudin Abul Qais — Ruang Gagasan, Pendidikan, dan Keilmuan">
-    <meta property="og:description" content="Ruang digital untuk esai, makalah akademik, dan catatan reflektif keilmuan.">
+    <meta property="og:title" content="Saifuddin Abul Kayyis — Merawat Gagasan, Menelusuri Pengetahuan">
+    <meta property="og:description" content="Ruang personal untuk esai, kajian akademik, dan catatan pemikiran tentang pendidikan, fitrah, dan kehidupan.">
     <meta property="og:type" content="website">
 
     <!-- Tailwind CSS CDN -->
@@ -32,11 +33,12 @@
             }
         }
     </script>
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-    
+
     <style>
         body {
             background-color: #F9F8F6;
@@ -44,34 +46,38 @@
             font-family: 'Inter', sans-serif;
             -webkit-font-smoothing: antialiased;
         }
+
         h1, h2, h3, h4, .font-editorial {
             font-family: 'Lora', serif;
         }
-        /* Smooth transitions for tab views */
+
         .view-section {
             display: none;
         }
+
         .view-section.active {
             display: block;
         }
     </style>
 </head>
+
 <body class="min-h-screen flex flex-col selection:bg-intelgreen selection:text-white">
 
     <!-- HEADER / NAVIGASI KONSISTEN -->
     <header class="w-full border-b border-softgray bg-ivory/90 backdrop-blur sticky top-0 z-50">
         <div class="max-w-3xl mx-auto px-6 h-20 flex items-center justify-between">
+
             <!-- Wordmark -->
             <a href="#beranda" onclick="switchView('beranda')" class="group text-left">
                 <span class="block font-editorial font-semibold text-lg sm:text-xl text-darkslate group-hover:text-intelgreen transition-colors">
-                    Saefudin Abul Qais
+                    Saifuddin Abul Kayyis
                 </span>
                 <span class="block text-xs text-mutedslate tracking-wider uppercase">
                     Ruang Gagasan & Keilmuan
                 </span>
             </a>
 
-            <!-- Navigasi Desktop & Mobile Toggle -->
+            <!-- Navigasi Desktop -->
             <nav class="hidden md:flex items-center space-x-6 text-sm font-medium text-mutedslate">
                 <button onclick="switchView('beranda')" class="nav-link hover:text-darkslate transition-colors text-darkslate font-semibold" data-target="beranda">Beranda</button>
                 <button onclick="switchView('profil')" class="nav-link hover:text-darkslate transition-colors" data-target="profil">Profil</button>
@@ -100,26 +106,43 @@
         </div>
     </header>
 
-    <!-- KONTEN UTAMA DENGAN LEBAR KOLOM OPTIMUM (680px - 720px) -->
+    <!-- KONTEN UTAMA -->
     <main class="flex-grow max-w-2xl w-full mx-auto px-6 py-12 sm:py-16">
 
-        <!-- ================= 1. HALAMAN BERANDA (index) ================= -->
+        <!-- ================= 1. HALAMAN BERANDA ================= -->
         <section id="view-beranda" class="view-section active space-y-12">
+
             <!-- Hero Pengantar -->
-            <div class="space-y-4">
+            <div class="space-y-5">
                 <h1 class="font-editorial text-3xl sm:text-4xl text-darkslate tracking-tight leading-snug">
-                    Merawat gagasan, mendokumentasikan pembelajaran, dan membagikan pengetahuan.
+                    Merawat Gagasan, Menelusuri Pengetahuan.
                 </h1>
+
                 <p class="text-base sm:text-lg text-mutedslate leading-relaxed font-normal">
-                    Selamat datang di ruang digital milik <strong class="text-darkslate font-medium">Saefudin Abul Qais</strong>. Tempat ini didedikasikan untuk mencatat refleksi intelektual, kajian pendidikan, serta makalah dan esai analitis yang dikembangkan secara mandiri.
+                    Ruang personal Saifuddin Abul Kayyis
                 </p>
-                <div class="pt-2 flex items-center space-x-4">
+
+                <div class="space-y-4 text-sm sm:text-base text-mutedslate leading-relaxed">
+                    <p>
+                        Saya percaya bahwa belajar bukan sekadar mengumpulkan pengetahuan, melainkan perjalanan untuk memahami dunia secara lebih jernih, mempertanyakan hal-hal yang dianggap selesai, dan terus memperbaiki cara berpikir.
+                    </p>
+
+                    <p>
+                        Website ini merupakan ruang untuk merekam perjalanan intelektual, merawat gagasan melalui tulisan, serta mempertemukan refleksi pribadi dengan pengetahuan akademik. Di sini, proses belajar dan karya tulis berjalan beriringan—saling membentuk, menguji, dan memperkaya pemahaman.
+                    </p>
+
+                    <p>
+                        Esai, makalah akademik, dan catatan pemikiran yang tersaji di sini bukan sekadar kumpulan tulisan, melainkan jejak dari proses berpikir yang terus bertumbuh. Sebab, pengetahuan tidak hanya perlu dipelajari, tetapi juga direnungkan, dituliskan, dan dikembangkan agar menghadirkan pemahaman yang lebih bermakna.
+                    </p>
+                </div>
+
+                <div class="pt-2 flex flex-wrap items-center gap-x-4 gap-y-2">
                     <button onclick="switchView('gagasan')" class="inline-flex items-center text-sm font-medium text-intelgreen hover:underline">
-                        Jelajahi Esai Terbaru &rarr;
+                        Jelajahi Tulisan →
                     </button>
                     <span class="text-softgray">•</span>
                     <button onclick="switchView('profil')" class="text-sm font-medium text-mutedslate hover:text-darkslate">
-                        Tentang Penulis
+                        Mengenal Saya
                     </button>
                 </div>
             </div>
@@ -128,46 +151,64 @@
 
             <!-- Sorotan Tulisan Terbaru -->
             <div class="space-y-6">
-                <div class="flex items-center justify-between">
+                <div class="flex items-center justify-between gap-4">
                     <h2 class="font-editorial text-xl text-darkslate font-medium">Sorotan Publikasi</h2>
-                    <button onclick="switchView('arsip')" class="text-xs tracking-wider uppercase text-mutedslate hover:text-darkslate font-medium">Lihat Semua Arsip</button>
+                    <button onclick="switchView('arsip')" class="text-xs tracking-wider uppercase text-mutedslate hover:text-darkslate font-medium">
+                        Lihat Semua Arsip
+                    </button>
                 </div>
 
-                
-<div id="gagasan-articles-list" class="space-y-8">
-    <!-- Daftar artikel akan dimuat otomatis dari Pages CMS -->
-</div>
-
+                <div id="gagasan-articles-list" class="space-y-8">
+                    <!-- Daftar artikel dimuat otomatis dari Pages CMS -->
+                </div>
             </div>
         </section>
 
         <!-- ================= 2. HALAMAN PROFIL ================= -->
         <section id="view-profil" class="view-section space-y-8">
+
             <div class="space-y-3">
-                <h1 class="font-editorial text-3xl text-darkslate">Profil & Prinsip Intelektual</h1>
-                <p class="text-sm text-mutedslate">Catatan ringkas mengenai latar minat, fokus kajian, dan arah pemikiran.</p>
+                <h1 class="font-editorial text-3xl text-darkslate">
+                    Tentang Saya
+                </h1>
+
+                <p class="font-editorial text-xl sm:text-2xl text-darkslate leading-relaxed">
+                    Belajar Sepanjang Hayat, Bertumbuh Selaras Fitrah
+                </p>
             </div>
 
-            <div class="space-y-6 text-mutedslate leading-relaxed text-sm sm:text-base">
+            <div class="space-y-6 text-mutedslate text-sm sm:text-base leading-relaxed">
                 <p>
-                    Nama saya <strong class="text-darkslate">Saefudin Abul Qais</strong>. Website ini saya bangun sebagai rumah digital mandiri untuk merawat tradisi literasi, mendokumentasikan proses belajar, serta membagikan buah pikiran dalam bentuk esai dan kajian akademik.
+                    Saya adalah Saifuddin Abul Kayyis, seorang <em>lifelong learner</em>—pembelajar sepanjang hayat yang meyakini bahwa proses belajar tidak berhenti di ruang kelas, tidak dibatasi oleh jenjang pendidikan, dan tidak selesai ketika seseorang memperoleh pengakuan akademik. Belajar adalah bagian dari perjalanan manusia untuk terus mengenali diri, memahami kehidupan, dan menumbuhkan potensi yang telah Allah anugerahkan.
                 </p>
 
-                <div class="space-y-3 pt-2">
-                    <h3 class="font-editorial text-lg text-darkslate font-medium">Fokus Kajian & Minat</h3>
-                    <ul class="list-disc pl-5 space-y-2">
-                        <li>Filsafat pendidikan, epistemologi, dan metodologi pembelajaran.</li>
-                        <li>Dinamika literasi, budaya membaca, dan transmisi ilmu di ruang publik.</li>
-                        <li>Refleksi kritis atas perkembangan teknologi terhadap pola pikir manusia.</li>
-                    </ul>
-                </div>
+                <p>
+                    Saya menaruh perhatian pada pendidikan, pengembangan pemikiran, dan hubungan antara pengetahuan dengan kehidupan nyata. Dalam perjalanan tersebut, saya tertarik pada pendekatan <em>Fitrah Based Education</em> dan <em>Fitrah Based Life</em>, yang mengajak kita memandang manusia bukan semata-mata sebagai objek pembelajaran, melainkan sebagai pribadi yang memiliki fitrah, potensi, tahapan perkembangan, serta perjalanan hidup yang perlu dipahami dan ditumbuhkan dengan bijaksana.
+                </p>
 
-                <div class="space-y-3 pt-2">
-                    <h3 class="font-editorial text-lg text-darkslate font-medium">Prinsip Menulis</h3>
-                    <p>
-                        Saya percaya bahwa gagasan yang baik lahir dari proses pembacaan yang tekun, perenungan yang jujur, serta penyusunan argumen yang jernih. Tulisan di ruang ini disajikan dengan memegang teguh kejujuran akademik dan kesederhanaan bahasa.
-                    </p>
-                </div>
+                <p>
+                    Bagi saya, pendidikan tidak cukup dimaknai sebagai proses memindahkan pengetahuan atau mengejar capaian yang terukur. Pendidikan juga merupakan ikhtiar untuk menemani manusia mengenali fitrahnya, menumbuhkan potensi dirinya, membangun hubungan yang bermakna, serta menemukan peran dan tanggung jawabnya dalam kehidupan. Perspektif ini mendorong saya untuk terus merefleksikan kembali cara kita belajar, mendidik, membersamai anak, dan menjalani kehidupan sehari-hari.
+                </p>
+
+                <p>
+                    Saya memandang kehidupan itu sendiri sebagai ruang belajar yang luas. Pengalaman, interaksi, tanggung jawab, kegagalan, maupun perjumpaan dengan gagasan baru dapat menjadi jalan untuk memperdalam pemahaman. Karena itu, belajar tidak semestinya terpisah dari kehidupan, sebagaimana pendidikan tidak seharusnya tercerabut dari fitrah dan realitas manusia.
+                </p>
+
+                <p>
+                    Menulis menjadi salah satu cara saya merawat proses tersebut. Melalui esai, kajian akademik, dan catatan pemikiran, saya berusaha menata gagasan, menguji pemahaman, serta mempertemukan refleksi pribadi dengan pengetahuan yang lebih luas. Bagi saya, tulisan bukan penanda bahwa pencarian telah selesai, melainkan jejak dari proses berpikir dan belajar yang terus berlangsung.
+                </p>
+
+                <p>
+                    Website ini saya bangun sebagai ruang untuk mendokumentasikan perjalanan intelektual, menghimpun karya, dan mengembangkan pemikiran tentang pendidikan serta kehidupan. Saya berharap ruang ini dapat menjadi tempat bertemunya pengetahuan, refleksi, dan pengalaman—sebuah ikhtiar kecil untuk memahami manusia dan kehidupannya secara lebih utuh.
+                </p>
+
+                <p>
+                    Saya tidak menempatkan diri sebagai seseorang yang telah selesai memahami semua hal. Saya memilih untuk tetap menjadi pembelajar: terbuka terhadap pengetahuan, bersedia meninjau kembali pemahaman, dan terus mencari hikmah dalam perjalanan hidup.
+                </p>
+
+                <p class="text-darkslate font-medium">
+                    Sebab, belajar sepanjang hayat bukan hanya tentang menjadi semakin tahu, tetapi juga tentang bertumbuh menjadi manusia yang semakin mengenali fitrah, memahami tanggung jawab, dan menjalani kehidupan dengan lebih bermakna.
+                </p>
             </div>
         </section>
 
@@ -178,11 +219,9 @@
                 <p class="text-sm text-mutedslate">Kumpulan tulisan reflektif, analitis, dan opini konseptual.</p>
             </div>
 
-            
-<div id="gagasan-page-articles-list" class="space-y-8">
-    <!-- Daftar artikel Gagasan & Esai dimuat dari Pages CMS -->
-</div>
-
+            <div id="gagasan-page-articles-list" class="space-y-8">
+                <!-- Daftar artikel Gagasan & Esai dimuat dari Pages CMS -->
+            </div>
         </section>
 
         <!-- ================= 4. HALAMAN AKADEMIK & KAJIAN ================= -->
@@ -193,8 +232,8 @@
             </div>
 
             <div id="akademik-articles-list" class="space-y-8">
-    <!-- Daftar akademik akan dimuat otomatis dari Pages CMS -->
-</div>
+                <!-- Daftar akademik dimuat otomatis dari Pages CMS -->
+            </div>
         </section>
 
         <!-- ================= 5. HALAMAN ARSIP PUBLIKASI ================= -->
@@ -204,50 +243,121 @@
                 <p class="text-sm text-mutedslate">Katalog lengkap seluruh esai, catatan, dan makalah yang pernah diterbitkan.</p>
             </div>
 
-            
-<div id="arsip-articles-list" class="space-y-4">
-    <!-- Arsip publikasi akan dimuat otomatis dari Pages CMS -->
-</div>
+            <div id="arsip-articles-list" class="space-y-4">
+                <!-- Arsip publikasi dimuat otomatis dari Pages CMS -->
+            </div>
         </section>
 
         <!-- ================= 6. HALAMAN KONTAK ================= -->
         <section id="view-kontak" class="view-section space-y-8">
+
             <div class="space-y-3">
-                <h1 class="font-editorial text-3xl text-darkslate">Kontak & Dialog</h1>
-                <p class="text-sm text-mutedslate">Ruang penghubung untuk korespondensi profesional dan pertukaran gagasan.</p>
+                <h1 class="font-editorial text-3xl text-darkslate">
+                    Mari Terhubung
+                </h1>
+
+                <p class="text-sm text-mutedslate">
+                    Ruang untuk berbagi dan belajar bersama.
+                </p>
             </div>
 
             <div class="space-y-6 text-mutedslate text-sm sm:text-base leading-relaxed">
                 <p>
-                    Saya terbuka untuk diskusi akademik, korespondensi seputar esai yang diterbitkan, maupun kolaborasi dalam ranah pendidikan dan literasi.
+                    Saya senang berdiskusi, bertukar gagasan, dan menjelajahi berbagai sudut pandang baru—terutama seputar pendidikan, Fitrah Based Education, Fitrah Based Life, pengembangan manusia, serta hubungan antara pengetahuan dan kehidupan.
                 </p>
-                <div class="p-6 bg-ivory border border-softgray rounded space-y-2">
-                    <p class="text-xs tracking-wider uppercase text-mutedslate font-medium">Alamat Surat Elektronik Resmi</p>
-                    <p class="text-darkslate font-medium select-all">saefudin.abulqais@example.com <span class="text-xs font-normal text-mutedslate">(Ganti dengan email aktif Anda)</span></p>
+
+                <p>
+                    Saya percaya bahwa setiap percakapan dapat membuka pemahaman baru. Saya sendiri masih terus belajar, sehingga pertanyaan, perspektif yang berbeda, dan pengalaman orang lain selalu menjadi kesempatan berharga untuk memperluas wawasan.
+                </p>
+
+                <p>
+                    Jika ada gagasan yang ingin didiskusikan, tulisan yang ingin ditanggapi, atau kemungkinan kolaborasi yang ingin dikembangkan bersama, saya akan senang untuk terhubung.
+                </p>
+            </div>
+
+            <!-- Kanal untuk terhubung -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+                <a href="https://www.instagram.com/sayfu_addiin/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="block p-5 border border-softgray rounded hover:border-intelgreen transition-colors">
+                    <p class="text-xs tracking-wider uppercase text-mutedslate font-medium mb-2">
+                        Instagram
+                    </p>
+                    <p class="text-darkslate font-medium">@sayfu_addiin</p>
+                    <p class="text-xs text-mutedslate mt-2">Terhubung dan berbagi gagasan</p>
+                </a>
+
+                <a href="https://www.youtube.com/@temanbertumbuh"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="block p-5 border border-softgray rounded hover:border-intelgreen transition-colors">
+                    <p class="text-xs tracking-wider uppercase text-mutedslate font-medium mb-2">
+                        YouTube
+                    </p>
+                    <p class="text-darkslate font-medium">@temanbertumbuh</p>
+                    <p class="text-xs text-mutedslate mt-2">Menjelajahi proses belajar dan bertumbuh</p>
+                </a>
+
+                <div class="p-5 border border-softgray rounded">
+                    <p class="text-xs tracking-wider uppercase text-mutedslate font-medium mb-2">
+                        LinkedIn
+                    </p>
+                    <p class="text-darkslate font-medium">Profil profesional</p>
+                    <p class="text-xs text-mutedslate mt-2">Tautan profil belum ditambahkan</p>
                 </div>
+
+                <div class="p-5 border border-softgray rounded">
+                    <p class="text-xs tracking-wider uppercase text-mutedslate font-medium mb-2">
+                        Google Scholar
+                    </p>
+                    <p class="text-darkslate font-medium">Publikasi akademik</p>
+                    <p class="text-xs text-mutedslate mt-2">Tautan profil belum ditambahkan</p>
+                </div>
+
+                <div class="p-5 border border-softgray rounded sm:col-span-2">
+                    <p class="text-xs tracking-wider uppercase text-mutedslate font-medium mb-2">
+                        Email
+                    </p>
+                    <p class="text-darkslate font-medium">Korespondensi dan diskusi</p>
+                    <p class="text-xs text-mutedslate mt-2">Alamat email belum ditambahkan</p>
+                </div>
+
+            </div>
+
+            <div class="space-y-4 text-mutedslate text-sm sm:text-base leading-relaxed">
+                <p>
+                    Saya mungkin belum memiliki semua jawaban, tetapi saya selalu antusias untuk menjelajahi pertanyaan-pertanyaan baru dan belajar dari siapa pun yang bersedia berbagi.
+                </p>
+
+                <p class="text-darkslate font-medium">
+                    Mari bertukar pikiran, saling belajar, dan bertumbuh bersama.
+                </p>
             </div>
         </section>
 
-        <!-- ================= 7. HALAMAN DETAIL ARTIKEL (Dinamis via JS) ================= -->
+        <!-- ================= 7. HALAMAN DETAIL ARTIKEL ================= -->
         <section id="view-article-detail" class="view-section space-y-8">
             <button onclick="goBackFromArticle()" class="text-xs font-medium text-mutedslate hover:text-darkslate inline-flex items-center space-x-1">
                 <span>&larr; Kembali ke Arsip / Daftar Tulisan</span>
             </button>
 
             <article id="article-content-container" class="space-y-6">
-                <!-- Konten artikel akan dimuat melalui JavaScript -->
+                <!-- Konten artikel dimuat melalui JavaScript -->
             </article>
         </section>
 
     </main>
 
-    <!-- FOOTER KONSISTEN -->
+    <!-- FOOTER -->
     <footer class="w-full border-t border-softgray bg-ivory py-8 mt-auto">
         <div class="max-w-3xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between text-xs text-mutedslate space-y-4 sm:space-y-0">
             <div>
-                <p class="font-editorial text-darkslate font-medium text-sm">Saefudin Abul Qais</p>
+                <p class="font-editorial text-darkslate font-medium text-sm">Saifuddin Abul Kayyis</p>
                 <p>&copy; <span id="current-year">2026</span> Ruang Gagasan, Pendidikan, dan Keilmuan. Hak cipta dilindungi.</p>
             </div>
+
             <div class="flex space-x-6">
                 <button onclick="switchView('beranda')" class="hover:text-darkslate transition-colors">Beranda</button>
                 <button onclick="switchView('profil')" class="hover:text-darkslate transition-colors">Profil</button>
@@ -257,12 +367,12 @@
         </div>
     </footer>
 
-    <!-- JAVASCRIPT LOGIC UNTUK SINGLE PAGE TAB & ARTICLE VIEWER -->
+    <!-- JAVASCRIPT LOGIC UNTUK NAVIGASI DAN ARTIKEL -->
     <script>
         // Update tahun otomatis di footer
         document.getElementById('current-year').textContent = new Date().getFullYear();
 
-        // Database artikel sederhana untuk demo halaman baca
+        // Database artikel lokal sebagai fallback
         const articlesData = {
             'esai-1': {
                 title: 'Arti Belajar di Tengah Derasnya Arus Informasi Digital',
@@ -284,6 +394,7 @@
                     </p>
                 `
             },
+
             'esai-2': {
                 title: 'Menulis Sebagai Upaya Merawat Kewarasan Intelektual',
                 category: 'Opini Konseptual',
@@ -300,6 +411,7 @@
                     </p>
                 `
             },
+
             'akademik-1': {
                 title: 'Rekonstruksi Metode Pembelajaran Berbasis Inkuiri dalam Konteks Pendidikan Modern',
                 category: 'Makalah Akademik',
@@ -323,23 +435,22 @@
             }
         };
 
-        // Fungsi Navigasi Antar Halaman
+        // Fungsi navigasi antarhalaman
         function switchView(viewId) {
-            // Sembunyikan semua section
             document.querySelectorAll('.view-section').forEach(el => {
                 el.classList.remove('active');
             });
-            // Tampilkan section tujuan
+
             const target = document.getElementById('view-' + viewId);
+
             if (target) {
                 target.classList.add('active');
             }
-            // Scroll ke atas
+
             window.scrollTo({ top: 0, behavior: 'smooth' });
 
-            // Update status aktif di nav
             document.querySelectorAll('.nav-link').forEach(btn => {
-                if(btn.getAttribute('data-target') === viewId) {
+                if (btn.getAttribute('data-target') === viewId) {
                     btn.classList.add('text-darkslate', 'font-semibold');
                     btn.classList.remove('text-mutedslate');
                 } else {
@@ -349,12 +460,14 @@
             });
         }
 
-        // Fungsi Membuka Artikel Detail
+        // Fungsi membuka artikel
         function openArticle(articleId) {
             const article = cmsArticlesData[articleId] || articlesData[articleId];
+
             if (!article) return;
 
             const container = document.getElementById('article-content-container');
+
             container.innerHTML = `
                 <div class="space-y-3">
                     <div class="text-xs text-mutedslate">${article.category} • ${article.date} • Oleh ${article.author} (${article.readTime})</div>
@@ -366,7 +479,10 @@
                 </div>
             `;
 
-            document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.view-section').forEach(el => {
+                el.classList.remove('active');
+            });
+
             document.getElementById('view-article-detail').classList.add('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
@@ -375,7 +491,7 @@
             switchView('arsip');
         }
 
-        // Toggle Mobile Menu
+        // Toggle menu mobile
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
 
@@ -384,7 +500,8 @@
         }
 
         mobileMenuBtn.addEventListener('click', toggleMobileMenu);
-                // Memuat data artikel dari Pages CMS
+
+        // Memuat data artikel dari Pages CMS
         let cmsArticlesData = {};
 
         async function loadCMSArticles() {
@@ -400,18 +517,22 @@
                 const articles = await response.json();
 
                 cmsArticlesData = Object.fromEntries(
-                    articles.map(article => [article.id, {
-                        ...article,
-                        date: new Date(article.date + 'T00:00:00')
-                            .toLocaleDateString('id-ID', {
-                                day: 'numeric',
-                                month: 'long',
-                                year: 'numeric'
-                            })
-                    }])
+                    articles.map(article => [
+                        article.id,
+                        {
+                            ...article,
+                            date: new Date(article.date + 'T00:00:00')
+                                .toLocaleDateString('id-ID', {
+                                    day: 'numeric',
+                                    month: 'long',
+                                    year: 'numeric'
+                                })
+                        }
+                    ])
                 );
 
                 console.log('Data artikel CMS berhasil dimuat.');
+
                 renderGagasanArticles();
                 renderAkademikArticles();
                 renderArsipArticles();
@@ -420,146 +541,147 @@
             }
         }
 
+        function renderGagasanArticles() {
+            const allArticles = Object.values(cmsArticlesData);
 
-function renderGagasanArticles() {
-    const allArticles = Object.values(cmsArticlesData);
+            const articles = allArticles
+                .filter(article =>
+                    !article.category.toLowerCase().includes('akademik')
+                )
+                .sort((a, b) => {
+                    const dateA = new Date(a.date);
+                    const dateB = new Date(b.date);
+                    return dateB - dateA;
+                });
 
-    const articles = allArticles
-        .filter(article =>
-            !article.category.toLowerCase().includes('akademik')
-        )
-        .sort((a, b) => {
-            const dateA = new Date(a.date);
-            const dateB = new Date(b.date);
-            return dateB - dateA;
-        });
+            const renderList = (container, items) => {
+                if (!container) return;
 
-    const renderList = (container, items) => {
-        if (!container) return;
+                if (items.length === 0) {
+                    container.innerHTML = '<p>Belum ada artikel esai.</p>';
+                    return;
+                }
 
-        if (items.length === 0) {
-            container.innerHTML = '<p>Belum ada artikel esai.</p>';
-            return;
+                container.innerHTML = items.map(article => `
+                    <article class="border-b border-softgray pb-6 group cursor-pointer"
+                             onclick="openArticle('${article.id}')">
+                        <div class="text-xs text-mutedslate mb-1">
+                            ${article.category} • ${article.date}
+                        </div>
+                        <h2 class="font-editorial text-xl text-darkslate group-hover:text-intelgreen transition-colors font-medium mb-2">
+                            ${article.title}
+                        </h2>
+                        <p class="text-sm text-mutedslate leading-relaxed mb-3">
+                            ${article.summary || ''}
+                        </p>
+                        <span class="text-xs font-medium text-intelgreen">
+                            Baca selengkapnya →
+                        </span>
+                    </article>
+                `).join('');
+            };
+
+            renderList(
+                document.getElementById('gagasan-articles-list'),
+                articles.slice(0, 2)
+            );
+
+            renderList(
+                document.getElementById('gagasan-page-articles-list'),
+                articles
+            );
         }
-
-        container.innerHTML = items.map(article => `
-            <article class="border-b border-softgray pb-6 group cursor-pointer"
-                     onclick="openArticle('${article.id}')">
-                <div class="text-xs text-mutedslate mb-1">
-                    ${article.category} • ${article.date}
-                </div>
-                <h2 class="font-editorial text-xl text-darkslate group-hover:text-intelgreen transition-colors font-medium mb-2">
-                    ${article.title}
-                </h2>
-                <p class="text-sm text-mutedslate leading-relaxed mb-3">
-                    ${article.summary || ''}
-                </p>
-                <span class="text-xs font-medium text-intelgreen">
-                    Baca selengkapnya →
-                </span>
-            </article>
-        `).join('');
-    };
-
-    renderList(
-        document.getElementById('gagasan-articles-list'),
-        articles.slice(0, 2)
-    );
-
-    renderList(
-        document.getElementById('gagasan-page-articles-list'),
-        articles
-    );
-}
 
         function renderAkademikArticles() {
-    const container = document.getElementById('akademik-articles-list');
-    if (!container) return;
+            const container = document.getElementById('akademik-articles-list');
 
-    const articles = Object.values(cmsArticlesData)
-        .filter(article =>
-            article.category.toLowerCase().includes('akademik')
-        );
+            if (!container) return;
 
-    if (articles.length === 0) {
-        container.innerHTML = '<p>Belum ada makalah akademik.</p>';
-        return;
-    }
+            const articles = Object.values(cmsArticlesData)
+                .filter(article =>
+                    article.category.toLowerCase().includes('akademik')
+                );
 
-    container.innerHTML = articles.map(article => `
-        <article class="border-b border-softgray pb-8 space-y-3">
-            <div class="text-xs text-mutedslate">
-                ${article.category} • ${article.date}
-            </div>
+            if (articles.length === 0) {
+                container.innerHTML = '<p>Belum ada makalah akademik.</p>';
+                return;
+            }
 
-            <h2 class="font-editorial text-xl text-darkslate font-medium">
-                ${article.title}
-            </h2>
+            container.innerHTML = articles.map(article => `
+                <article class="border-b border-softgray pb-8 space-y-3">
+                    <div class="text-xs text-mutedslate">
+                        ${article.category} • ${article.date}
+                    </div>
 
-            <div class="text-xs bg-ivory border border-softgray p-3 rounded text-mutedslate space-y-1">
-                <p><strong class="text-darkslate">Abstrak:</strong> ${article.abstract || article.summary || ''}</p>
-                <p><strong class="text-darkslate">Kata Kunci:</strong> ${article.keywords || ''}</p>
-            </div>
+                    <h2 class="font-editorial text-xl text-darkslate font-medium">
+                        ${article.title}
+                    </h2>
 
-            <div class="pt-2">
-                <button onclick="openArticle('${article.id}')"
-                    class="text-xs font-medium text-intelgreen hover:underline">
-                    Baca Ringkasan Lengkap
-                </button>
-            </div>
-        </article>
-    `).join('');
-}
-        
-function renderArsipArticles() {
-    const container = document.getElementById('arsip-articles-list');
-    if (!container) return;
+                    <div class="text-xs bg-ivory border border-softgray p-3 rounded text-mutedslate space-y-1">
+                        <p><strong class="text-darkslate">Abstrak:</strong> ${article.abstract || article.summary || ''}</p>
+                        <p><strong class="text-darkslate">Kata Kunci:</strong> ${article.keywords || ''}</p>
+                    </div>
 
-    const articles = Object.values(cmsArticlesData)
-        .sort((a, b) => b.date.localeCompare(a.date));
-
-    if (articles.length === 0) {
-        container.innerHTML = '<p>Belum ada publikasi.</p>';
-        return;
-    }
-
-    const groupedArticles = {};
-
-    articles.forEach(article => {
-        const yearMatch = article.date.match(/\d{4}$/);
-        const year = yearMatch ? yearMatch[0] : 'Lainnya';
-
-        if (!groupedArticles[year]) {
-            groupedArticles[year] = [];
+                    <div class="pt-2">
+                        <button onclick="openArticle('${article.id}')"
+                            class="text-xs font-medium text-intelgreen hover:underline">
+                            Baca Ringkasan Lengkap
+                        </button>
+                    </div>
+                </article>
+            `).join('');
         }
 
-        groupedArticles[year].push(article);
-    });
+        function renderArsipArticles() {
+            const container = document.getElementById('arsip-articles-list');
 
-    container.innerHTML = Object.keys(groupedArticles)
-        .sort((a, b) => b.localeCompare(a))
-        .map(year => `
-            <div class="space-y-4">
-                <div class="text-xs text-mutedslate uppercase tracking-wider font-medium pt-2">
-                    ${year}
-                </div>
-                <ul class="space-y-4">
-                    ${groupedArticles[year].map(article => `
-                        <li class="border-b border-softgray pb-4">
-                            <button
-                                onclick="openArticle('${article.id}')"
-                                class="text-left font-editorial text-lg text-darkslate hover:text-intelgreen transition-colors">
-                                ${article.title}
-                            </button>
-                            <p class="text-xs text-mutedslate mt-1">
-                                ${article.category} • ${article.date}
-                            </p>
-                        </li>
-                    `).join('')}
-                </ul>
-            </div>
-        `).join('');
-}
+            if (!container) return;
+
+            const articles = Object.values(cmsArticlesData)
+                .sort((a, b) => b.date.localeCompare(a.date));
+
+            if (articles.length === 0) {
+                container.innerHTML = '<p>Belum ada publikasi.</p>';
+                return;
+            }
+
+            const groupedArticles = {};
+
+            articles.forEach(article => {
+                const yearMatch = article.date.match(/\d{4}$/);
+                const year = yearMatch ? yearMatch[0] : 'Lainnya';
+
+                if (!groupedArticles[year]) {
+                    groupedArticles[year] = [];
+                }
+
+                groupedArticles[year].push(article);
+            });
+
+            container.innerHTML = Object.keys(groupedArticles)
+                .sort((a, b) => b.localeCompare(a))
+                .map(year => `
+                    <div class="space-y-4">
+                        <div class="text-xs text-mutedslate uppercase tracking-wider font-medium pt-2">
+                            ${year}
+                        </div>
+                        <ul class="space-y-4">
+                            ${groupedArticles[year].map(article => `
+                                <li class="border-b border-softgray pb-4">
+                                    <button
+                                        onclick="openArticle('${article.id}')"
+                                        class="text-left font-editorial text-lg text-darkslate hover:text-intelgreen transition-colors">
+                                        ${article.title}
+                                    </button>
+                                    <p class="text-xs text-mutedslate mt-1">
+                                        ${article.category} • ${article.date}
+                                    </p>
+                                </li>
+                            `).join('')}
+                        </ul>
+                    </div>
+                `).join('');
+        }
 
         loadCMSArticles();
     </script>
