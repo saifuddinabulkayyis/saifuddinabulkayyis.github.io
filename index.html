@@ -462,6 +462,21 @@
             });
         }
 
+       
+function createArticleSlug(article) {
+    if (article.slug) {
+        return article.slug;
+    }
+
+    return article.title
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '');
+}
+
+
         // Fungsi membuka artikel
         
 function openArticle(articleId) {
