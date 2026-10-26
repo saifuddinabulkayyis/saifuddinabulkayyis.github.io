@@ -528,7 +528,15 @@ function openArticle(articleId) {
     });
 
     document.getElementById('view-article-detail').classList.add('active');
-window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    const slug = createArticleSlug(article);
+const jenis = article.category.toLowerCase().includes('makalah')
+    ? 'makalah'
+    : 'artikel';
+
+window.location.hash = jenis + '/' + slug;
+    
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
         
         function goBackFromArticle() {
