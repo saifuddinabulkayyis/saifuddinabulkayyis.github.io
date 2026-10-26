@@ -437,6 +437,7 @@
 
         // Fungsi navigasi antarhalaman
         function switchView(viewId) {
+            window.location.hash = viewId;
             document.querySelectorAll('.view-section').forEach(el => {
                 el.classList.remove('active');
             });
