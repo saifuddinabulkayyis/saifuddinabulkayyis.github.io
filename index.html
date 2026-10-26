@@ -539,6 +539,30 @@ window.location.hash = jenis + '/' + slug;
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
         
+function handleArticleUrl() {
+    const hash = decodeURIComponent(window.location.hash.slice(1));
+    const parts = hash.split('/');
+
+    if (parts.length !== 2) return;
+
+    const jenis = parts[0];
+    const slug = parts[1];
+
+    if (jenis !== 'artikel' && jenis !== 'makalah') return;
+
+    const article = Object.values(cmsArticlesData).find(item => {
+        const articleJenis = item.category.toLowerCase().includes('makalah')
+            ? 'makalah'
+            : 'artikel';
+
+        return articleJenis === jenis && createArticleSlug(item) === slug;
+    });
+
+    if (article) {
+        openArticle(article.id);
+    }
+}
+
         function goBackFromArticle() {
             switchView('arsip');
         }
@@ -588,6 +612,8 @@ window.location.hash = jenis + '/' + slug;
                 renderGagasanArticles();
                 renderAkademikArticles();
                 renderArsipArticles();
+
+                handleArticleUrl();
             } catch (error) {
                 console.error('Data artikel CMS gagal dimuat:', error);
             }
