@@ -511,9 +511,6 @@ function openArticle(articleId) {
     });
 
     document.getElementById('view-article-detail').classList.add('active');
-
-window.location.hash = 'artikel/' + encodeURIComponent(articleId);
-
 window.scrollTo({ top: 0, behavior: 'smooth' });
 
         function goBackFromArticle() {
