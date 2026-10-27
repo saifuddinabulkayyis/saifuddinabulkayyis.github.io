@@ -487,8 +487,8 @@ function openArticle(articleId) {
     const container = document.getElementById('article-content-container');
 
     const pdfUrl = article.pdfUrl
-        ? new URL(article.pdfUrl, 'https://saifuddinabulkayyis.github.io/').href
-        : '';
+    ? new URL(article.pdfUrl, window.location.origin + '/').href
+    : '';
 
     container.innerHTML = `
         <div class="space-y-3">
